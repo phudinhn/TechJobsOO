@@ -2,8 +2,6 @@
 using TechJobs.Data;
 using TechJobs.ViewModels;
 using TechJobs.Models;
-using TechJobs.Models;
-
 
 namespace TechJobs.Controllers
 {
@@ -31,7 +29,7 @@ namespace TechJobs.Controllers
             displayJob.PositionTypeID = findJob.PositionType.ID;
             displayJob.CoreCompetencyID = findJob.CoreCompetency.ID;
 
-            return View();
+            return View(findJob);
         }
 
         public IActionResult New()
