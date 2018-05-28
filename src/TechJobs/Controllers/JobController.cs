@@ -21,13 +21,14 @@ namespace TechJobs.Controllers
         {
             // TODO #1 - get the Job with the given ID and pass it into the view
             Job findJob = jobData.Find(id);
-            NewJobViewModel displayJob = new NewJobViewModel();
-
-            displayJob.Name = findJob.Name;
-            displayJob.EmployerID = findJob.Employer.ID;
-            displayJob.LocationID = findJob.Location.ID;
-            displayJob.PositionTypeID = findJob.PositionType.ID;
-            displayJob.CoreCompetencyID = findJob.CoreCompetency.ID;
+            NewJobViewModel displayJob = new NewJobViewModel
+            {
+                Name = findJob.Name,
+                EmployerID = findJob.Employer.ID,
+                LocationID = findJob.Location.ID,
+                PositionTypeID = findJob.PositionType.ID,
+                CoreCompetencyID = findJob.CoreCompetency.ID
+            };
 
             return View(findJob);
         }
